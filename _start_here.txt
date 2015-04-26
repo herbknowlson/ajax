@@ -1,0 +1,52 @@
+#------------------------------------------------------------------------
+#
+# Use this file (_start_here.txt) to understand how the Ajax project works
+#
+# BDD format - Refernence: http://www.ryangreenhall.com/articles/bdd-by-example.html
+#
+# ----------
+# User Story
+# -----------
+# As a [computer user]
+# I want [an easy way to view images]
+# So that I receive [a better experience]
+#
+#
+# --------------
+# Scenario: Run the program
+# --------------
+# Given I have every thing configured and working
+#
+# When I click the (batch - Shortcut)
+# Then the command window opens
+# And the image files load
+# And the Chrome browser opens
+# And the web page displays a button (Show Images)
+#
+# When I press the Show Images button
+# Then images display in the browser
+#
+#---------------------------------------------------------------------------
+#
+# -----------
+# Files used:
+# -----------
+# 1 (_start_here.txt) this file used to understand how the Ajax project works
+# 2 (Ajax.htm) web page that displays the images. Conatins Ajax script to build the page.
+# 3 (batch - Shortcut) Short cut used to execute the batch.bat file with one click
+# 4 (batch.bat) Batch file that initailizes the Ruby environment and launched the browser
+# 5 (createImageFile.rb) Ruby program that reads a directory and puts the file names in a text file
+# 6 (imageNames.txt) Text file created by Ruby
+#
+#
+# ---------------------------------
+# Scenario: Choose files to display
+# ---------------------------------
+# Given 
+#
+# When I open the createIamgesFile.rb
+# Then I see the folderToShow variable
+# 
+# When I change the value
+# And I run the progam
+# Then the new images display in the browser

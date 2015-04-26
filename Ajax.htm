@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+// -----------------------------------------------------
+// This page displays images, the name of which are held
+// in a file called imageNames.txt. This file is created
+// by by a ruby program call createImageFile.rb.
+// ------------------------------------------------------
+function loadXMLDoc()
+{
+	document.getElementById("heading").innerHTML="Pleas wait images are loading......"
+	var xmlhttp;
+	xmlhttp=new XMLHttpRequest();
+	xmlhttp.open("GET","imageNames.txt",false);
+	xmlhttp.send();
+	document.getElementById("myImages").innerHTML=xmlhttp.responseText;
+}
+</script>
+</head>
+<body>
+<p id="heading"></p>
+<p id="image"></p>
+<div id="myImages"><h2>Let AJAX change this page</h2></div>
+<button type="button" onclick="loadXMLDoc()">Show Images</button>
+</body>
+</html>
