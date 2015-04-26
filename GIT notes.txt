@@ -1,0 +1,28 @@
+git config --global user.name "Herb Knowlson"
+git config --list
+
+C:\Users\Herb>git config --list
+core.symlinks=false
+core.autocrlf=true
+color.diff=auto
+color.status=auto
+color.branch=auto
+color.interactive=true
+pack.packsizelimit=2g
+help.format=html
+http.sslcainfo=/bin/curl-ca-bundle.crt
+sendemail.smtpserver=/bin/msmtp.exe
+diff.astextplain.textconv=astextplain
+rebase.autosquash=true
+user.name=Herb Knowlson
+
+C:\Users\Herb>
+
+
+Take an existing project or directory and imports it into Git.
+
+go to the project’s directory and type
+
+$ git init
+
+reference: http://readwrite.com/2013/09/30/understanding-github-a-journey-for-beginners-part-1
