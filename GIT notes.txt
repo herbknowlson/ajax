@@ -18,11 +18,30 @@ user.name=Herb Knowlson
 
 C:\Users\Herb>
 
+reference: http://readwrite.com/2013/09/30/understanding-github-a-journey-for-beginners-part-1
 
-Take an existing project or directory and imports it into Git.
+exit vim
+Hit the ESC key to get into Normal (command) mode then type :q and press Enter . To quit without saving any changes, type :q! and press Enter 
 
-go to the project’s directory and type
+github.com
+herbknowlson@gmail.com
+u:herbknowlson p:guitar
+
+
+
+Take an existing project or directory and imports it into Git. go to the project’s directory and type
 
 $ git init
 
-reference: http://readwrite.com/2013/09/30/understanding-github-a-journey-for-beginners-part-1
+Creating Your Online Repository
+
+
+Connect Your Local Repository To Your GitHub Repository
+
+git remote add origin https://github.com/herbknowlson/ajax.git
+
+Now we want to upload, or “push,” our changes up to the GitHub remote repo. That’s easy. Just type:
+
+git push -u origin master
+
+git remote -v
