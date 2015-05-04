@@ -25,7 +25,7 @@ Hit the ESC key to get into Normal (command) mode then type :q and press Enter .
 
 github.com
 herbknowlson@gmail.com
-u:herbknowlson p:guitar
+u:herbknowlson p:Guit@r01
 
 
 
