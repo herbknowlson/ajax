@@ -2,7 +2,20 @@
 <!DOCTYPE html>
 <html>
 <head>
+<body onload="loadXMLDoc();">
+
 <script>
+
+function getUrlVars() {
+  var vars = {};
+  var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,
+  function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+}
+
+
 // -----------------------------------------------------
 // This page displays images, the name of which are held
 // in a file called imageNames.txt. This file is created
@@ -10,19 +23,33 @@
 // ------------------------------------------------------
 function loadXMLDoc()
 {
-	document.getElementById("heading").innerHTML="Please wait images are loading......"
-	var xmlhttp;
-	xmlhttp=new XMLHttpRequest();
-	xmlhttp.open("GET","imageNames.txt",false);
-	xmlhttp.send();
-	document.getElementById("myImages").innerHTML=xmlhttp.responseText;
+	var selection = getUrlVars()["selection"];
+	var msg = "Please wait images are loading...... " + selection;
+   	document.getElementById("heading").innerHTML=msg;
+
+   	 if (selection == "1") {
+   	   var xmlhttp;
+   	   xmlhttp=new XMLHttpRequest();
+   	   xmlhttp.open("GET","imageNames1.txt",false);
+   	   xmlhttp.send();
+   	   document.getElementById("myImages").innerHTML=xmlhttp.responseText;
+   	 }
+
+   	 if (selection == "2") {
+	   var xmlhttp;
+	   xmlhttp=new XMLHttpRequest();
+	   xmlhttp.open("GET","imageNames2.txt",false);
+	   xmlhttp.send();
+	   document.getElementById("myImages").innerHTML=xmlhttp.responseText;
+   	 }
 }
+
 </script>
 </head>
-<body>
+
 <p id="heading"></p>
 <p id="image"></p>
 <div id="myImages"><h2>Let AJAX change this page</h2></div>
-<button type="button" onclick="loadXMLDoc()">Show Images</button>
+
 </body>
 </html>
