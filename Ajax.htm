@@ -6,6 +6,16 @@
 
 <script>
 
+function pageScroll() {
+	window.scrollBy(0,15 ); // horizontal and vertical scroll increments
+	scrolldelay = setTimeout('pageScroll()',50); // scrolls every 1 milliseconds
+}
+
+function stopScroll() {
+    	clearTimeout(scrolldelay);
+}
+
+
 function getUrlVars() {
   var vars = {};
   var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,
@@ -33,6 +43,8 @@ function loadXMLDoc()
    	   xmlhttp.open("GET","imageNames1.txt",false);
    	   xmlhttp.send();
    	   document.getElementById("myImages").innerHTML=xmlhttp.responseText;
+   	   document.getElementById("heading").innerHTML="";
+
    	 }
 
    	 if (selection == "2") {
@@ -45,9 +57,11 @@ function loadXMLDoc()
 }
 
 </script>
+
 </head>
 
 <p id="heading"></p>
+<p> <a href="javascript:pageScroll()">Scroll Page </a></p>
 <p id="image"></p>
 <div id="myImages"><h2>Let AJAX change this page</h2></div>
 

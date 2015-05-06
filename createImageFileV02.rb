@@ -6,102 +6,52 @@
 # Ajax code.
 #----------------------------------------------------
 #
-v1 = ARGV[0]
-v2 = ARGV[1]
-v3 = ARGV[2]
+index1 = ARGV[0]  # index
+index2 = ARGV[1]  # another index
 
-puts v1
-puts v2
-puts v3
-
-if v3.nil?
-  v3 = v2
-  puts "Got here"
-end
-
+puts index1
+puts index2
 
 MAX_FILES = 100
-if v1 == "1"
-  results = "imageNames1.txt"
-end
-
-if v1 == "2"
-  results = "imageNames2.txt"
-end
+results = "imageNames1.txt"
 
 puts results
 
 currentDir = "C:/xampp/htdocs/Ajax"
-#
-#folderToShow = "Alaska"
-#folderToShow = "Family"
-#folderToShow = "Ward90"
-#imageSource1 = './drop images here/' + folderToShow + '/*.{jpg,png,gif}'
-
-show1 = v2
-show2 = v3
-#show1 = "03*"
-#show1 = "04*"
-#show1 = "06 ASS"
-#show = "45*"
-#show1 = "67*"  # Note: This choice will show both 67 and 670
-#show1 = "67 h*"  # Note: This choice will show only 67
-#show2 = "70 M*"  # Note: This choice will show only 70 
-#show = "600 1*"
-#show2 = "600 3*"
-#show3 = "600 9 ma*"
-#show2 = "610 combo"
-#show = "660*"
-#show = "700*"
-#show = "720*"
-#show = "760*"
-#show = "825*"
-#show = "900*"
-#show = "970*"
-#show = "980*"
-imageSource1 = './drop images here/Index/' + show1 + '/*.{jpg,png,gif}'
-imageSource2 = './drop images here/Index/' + show2 + '/*.{jpg,png,gif}'
-#imageSource3 = './drop images here/Index/' + show3 + '/*.{jpg,png,gif}'
-
 Dir.chdir(currentDir)
-
-fileNames1 = Dir[imageSource1].entries
-fileNames2 = Dir[imageSource2].entries
-#fileNames3 = Dir[imageSource3].entries
-
-#
-# Concatinate the files
-#
-fileNames1.concat fileNames2
-#fileNames1.concat fileNames3
-
+if v=index2.nil?
+  imageSource1 = './drop images here/Index/' + index1 + '/*.{jpg,png,gif}'
+  fileNames = Dir[imageSource1].entries
+else
+  imageSource1 = './drop images here/Index/' + index1 + '/*.{jpg,png,gif}'
+  imageSource2 = './drop images here/Index/' + index2 + '/*.{jpg,png,gif}'
+  fileNames = Dir[imageSource1].entries
+  fileNames2 = Dir[imageSource2].entries
+  fileNames.concat fileNames2  # Concatinate the files
+end  
 
 #
 # Randomize the file
 #
-a = fileNames1
-b = []
+newArray = []
 i = 0
-originalSize = a.size
-until  i > originalSize  
-  r = rand(0..a.size)
-  b[i] = a[r]
-  a.delete_at(r)
+fileSize = fileNames.size
+while  fileNames.size > 0
+  r = rand(0..fileNames.size) # pick a random file from what remains
+  newArray[i] = fileNames[r]  # add the random file to the new array
+  fileNames.delete_at(r)      # remove the selected file
   i = i + 1
-  if i > MAX_FILES
+  if i > MAX_FILES            # don't build too big a page
     break
   end
 end
 
-b.each {|x| print x, "\n" }
+newArray.each {|x| print x, "\n" }
 
 #
 # Write the file names to a file and print the results
 #
-open(results,'w') { |f| b.each {|x| f << "'<img src = " + '"' + x.to_s + '"' + ">'" + "\n" }}
-#open(results,'r') { |f| b.each {|x| print x + "\n"}}
-
-
+open(results,'w') { |f| newArray.each {|x| f << "'<img src = " + '"' + x.to_s + '"' + ">'" + "\n" }}
 
 #---------------------------------------------------
 # To run this program
