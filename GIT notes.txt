@@ -25,11 +25,11 @@ Hit the ESC key to get into Normal (command) mode then type :q and press Enter .
 
 github.com
 herbknowlson@gmail.com
-u:herbknowlson p:Guit@r01
+u:herbknowlson p:
 
 
 
-Take an existing project or directory and imports it into Git. go to the projectís directory and type
+Take an existing project or directory and imports it into Git. go to the project‚Äôs directory and type
 
 $ git init
 
@@ -40,7 +40,7 @@ Connect Your Local Repository To Your GitHub Repository
 
 git remote add origin https://github.com/herbknowlson/ajax.git
 
-Now we want to upload, or ìpush,î our changes up to the GitHub remote repo. Thatís easy. Just type:
+Now we want to upload, or ‚Äúpush,‚Äù our changes up to the GitHub remote repo. That‚Äôs easy. Just type:
 
 git push -u origin master
 
