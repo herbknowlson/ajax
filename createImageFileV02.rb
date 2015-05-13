@@ -13,7 +13,7 @@ puts index1
 puts index2
 
 MAX_FILES = 100
-results = "imageNames1.txt"
+results = "imageNames.txt"
 
 puts results
 type = "jpg,png,gif"

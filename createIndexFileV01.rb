@@ -47,8 +47,8 @@ File.open(results2,"w") do |f|
   f.puts tr
   for i in 0 ... keys.size
     tdCount = tdCount + 1
-    td = "<td><a href='index2.php?select=true&index1=" + keys[i] + "*'>" + values[i] + "</a>"
-    td2 = " -  <a href='index.php?select=true&index1=" + keys[i] + "*&index2=gifs'>gifs</a>  </td>"
+    td = "<td><a href='index.php?select=true&index1=" + keys[i] + "*'>" + values[i] + "</a>"
+    td2 = " -  <a href='index.php?select=true&index1=" + keys[i] + "*&index=gifs'>gifs</a>  </td>"
     f.puts td + td2
     if tdCount > 2
       trCount = trCount + 1
