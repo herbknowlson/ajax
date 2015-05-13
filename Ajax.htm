@@ -28,7 +28,7 @@ function getUrlVars() {
 
 // -----------------------------------------------------
 // This page displays images, the name of which are held
-// in a file called imageNames.txt. This file is created
+// in a file called imageNames.txt. That file is created
 // by a ruby program call createImageFile.rb.
 // ------------------------------------------------------
 function loadXMLDoc()
@@ -40,7 +40,7 @@ function loadXMLDoc()
    	 if (selection == "1") {
    	   var xmlhttp;
    	   xmlhttp=new XMLHttpRequest();
-   	   xmlhttp.open("GET","imageNames1.txt",false);
+   	   xmlhttp.open("GET","imageNames.txt",false);
    	   xmlhttp.send();
    	   document.getElementById("myImages").innerHTML=xmlhttp.responseText;
    	   document.getElementById("heading").innerHTML="";

@@ -16,15 +16,19 @@ MAX_FILES = 100
 results = "imageNames1.txt"
 
 puts results
+type = "jpg,png,gif"
 
 currentDir = "C:/xampp/htdocs/Ajax"
 Dir.chdir(currentDir)
 if v=index2.nil?
   imageSource1 = './drop images here/Index/' + index1 + '/*.{jpg,png,gif}'
+  #imageSource1 = './drop images here/Index/' + index1 + '/*.{gif}'
   fileNames = Dir[imageSource1].entries
 else
-  imageSource1 = './drop images here/Index/' + index1 + '/*.{jpg,png,gif}'
-  imageSource2 = './drop images here/Index/' + index2 + '/*.{jpg,png,gif}'
+  #imageSource1 = './drop images here/Index/' + index1 + '/*.{jpg,png,gif}'
+  #imageSource2 = './drop images here/Index/' + index2 + '/*.{jpg,png,gif}'
+  imageSource1 = './drop images here/Index/' + index1 + '/*.{gif}'
+  imageSource2 = './drop images here/Index/' + index2 + '/*.{gif}'
   fileNames = Dir[imageSource1].entries
   fileNames2 = Dir[imageSource2].entries
   fileNames.concat fileNames2  # Concatinate the files

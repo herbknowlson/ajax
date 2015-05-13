@@ -2,31 +2,108 @@
 #
 # Use this file (_start_here.txt) to understand how the Ajax project works
 #
-# BDD format - Refernence: http://www.ryangreenhall.com/articles/bdd-by-example.html
+#--------------------------------------------------------------------------
+# Locations: 
+#------------
+# Code: C:\xampp\htdocs\Ajax
+# Logs: C:\xampp\apache\logs
+# Ruby: C:\Ruby21\bin\setrbvars.bat
+#----------------------------------------------------------------------------
 #
-# ----------
-# User Story
-# -----------
-# As a [computer user]
-# I want [an easy way to view images]
-# So that I receive [a better experience]
+#--------------------------------
+# Scenario: Run from a web page
+#--------------------------------
 #
+# Given I have XAMPP installed
+# And I have Apache running
+# And I have index.php page built
+# And I http://localhost/Ajax/index.php as the page to open in Chrome
+# 
+# When I open Chrome 
+# Then index.php page will launch
 #
-# --------------
-# Scenario: Run the program
-# --------------
+# ------------------------------------------
+# Scenario: Run the program from a short cut
+# ------------------------------------------
+#
+# As a Developer
+# I want a Short Cut
+# So I can test the program without using the browser
+#
 # Given I have every thing configured and working
 #
 # When I click the (batch - Shortcut)
 # Then the command window opens
-# And the image files load
-# And the Chrome browser opens
-# And the web page displays a button (Show Images)
+# And the Ruby program executes
+# And the image files are loaded
+# And the imageNames file is created
 #
-# When I press the Show Images button
-# Then images display in the browser
 #
-#---------------------------------------------------------------------------
+#-----------
+# Reference
+#-----------
+# BDD format - Refernence: http://www.ryangreenhall.com/articles/bdd-by-example.html
+#
+# ----------
+# User Story
+# ----------
+# As a [computer user]
+# I want a web page
+# So I have an easy way to view images
+#
+#------------------------
+# Scenario: Progam Flow
+#------------------------
+#
+# When I open Chrome
+# Then the home.php page opens 
+#
+# When I click the index link
+# Then the home.php page is called again
+# And a parameter is passed (select=true)
+#
+# When the home page (home.php) is accessed
+# And the parameter select=true
+# Then the php function doSelect() is executed
+# And a batch file is called 
+# And parameters are passed 
+# And the index.php page is launched
+#
+# When I click a link
+# Then the same page(index.php) is referenced
+# And parameters are passed
+#
+# When the page (index.php) is accessed
+# And the parameters are recieved
+# Then the php function doSelect() is executed
+# And the batch file is called
+# And parameters are passed (There are 2 parameters that represent the selection made)
+#
+# When the batch file is executed
+# And parameters are recieved
+# Then the Ruby evironment is setup
+# And the Ruby program (createImageFile.rb) is executed
+# And parameteres are passed
+#
+# When the Ruby program is executed
+# And the paramters are recieved
+# Then the selected directory(s) are read
+# And a file is created containing filnames formatted in HTML
+#
+# When the program completes
+# Then Ajax.htm page is launched
+#
+# When the Ajax.htm page is loaded
+# Then Java script is executed
+#
+# When the Java script is executed
+# Then the imageName file is read
+# And the contents are inserted in the page
+# And the images display
+# And a link is added to control scrolling
+#
+# When the Start Scrolling link is clicked
+# Then the page starts to scroll
 #
 # -----------
 # Files used:
@@ -38,15 +115,3 @@
 # 5 (createImageFile.rb) Ruby program that reads a directory and puts the file names in a text file
 # 6 (imageNames.txt) Text file created by Ruby
 #
-#
-# ---------------------------------
-# Scenario: Choose files to display
-# ---------------------------------
-# Given 
-#
-# When I open the createIamgesFile.rb
-# Then I see the folderToShow variable
-# 
-# When I change the value
-# And I run the progam
-# Then the new images display in the browser
