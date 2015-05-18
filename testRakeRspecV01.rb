@@ -27,23 +27,23 @@ end
 
 #yDTLcpj-V897yAzGks-J
 
-#describe "rpec example" do
-#  it 'step-01 should test rake' do
+describe "rpec example" do
+  it 'step-01 should test rake' do
     puts "testRake"
-  #end
+  end
 
 #https://www.quandl.com/api/v1/datasets/WIKI/AAPL.json?auth_token=yDTLcpj-V897yAzGks-J
-#SERVER_URL = "https://www.quandl.com/api/v1/datasets/WIKI/AAPL.json?&trim_start=2013-11-09&trim_end=2013-11-10&auth_token=yDTLcpj-V897yAzGks-J"
-#  it 'step-02 should test RestClient' do
-#    response = RestClient.get("#{SERVER_URL}"){|response, request, result|
-#      Common.debug(request, response, DEBUG)
-#      response = JSON.parse(response)
-#      #puts response
-#  ##    response["responseCode"].should eql 0
-#  ##    response["model"]["patients"].count.should > 1
-#   }
-#  end
-#end 
+SERVER_URL = "https://www.quandl.com/api/v1/datasets/WIKI/AAPL.json?&trim_start=2013-11-09&trim_end=2013-11-10&auth_token=yDTLcpj-V897yAzGks-J"
+  it 'step-02 should test RestClient' do
+    response = RestClient.get("#{SERVER_URL}"){|response, request, result|
+      Common.debug(request, response, DEBUG)
+      response = JSON.parse(response)
+      #puts response
+  ##    response["responseCode"].should eql 0
+  ##    response["model"]["patients"].count.should > 1
+   }
+  end
+end 
 #
 #MAX_FILES = 100
 #results = "indexNames.json"

@@ -21,7 +21,7 @@ type = "jpg,png,gif"
 currentDir = "C:/xampp/htdocs/Ajax"
 Dir.chdir(currentDir)
 if v=index2.nil?
-  imageSource1 = './drop images here/Index/' + index1 + '/*.{jpg,png,gif}'
+  imageSource1 = './drop images here/Index/' + index1 + '/*.{jpg,png,gif,webm}'
   #imageSource1 = './drop images here/Index/' + index1 + '/*.{gif}'
   fileNames = Dir[imageSource1].entries
 else
