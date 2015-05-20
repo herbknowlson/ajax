@@ -6,14 +6,13 @@
 # Ajax code.
 #----------------------------------------------------
 #
-
-
 MAX_FILES = 100
 results = "indexNames.json"
 results2 = "indexNames.txt"
 #puts results
 
-myfolder = "C:/xampp/htdocs/Ajax/drop images here/Index/"
+#myfolder = "C:/xampp/htdocs/Ajax/drop images here/Index/"
+myfolder = "C:/xampp/htdocs/img/movies/"
 
 keys = []
 values = []
@@ -91,25 +90,25 @@ end # close the file
 ##
 ## Randomize the file
 ##
-newArray = []
-i = 0
-fileSize = fileNames.size
-while  fileNames.size > 0
-  r = rand(0..fileNames.size) # pick a random file from what remains
-  newArray[i] = fileNames[r]  # add the random file to the new array
-  fileNames.delete_at(r)      # remove the selected file
-  i = i + 1
-  if i > MAX_FILES            # don't build too big a page
-    break
-  end
-end
-
-newArray.each {|x| print x, "\n" }
+#newArray = []
+#i = 0
+#fileSize = fileNames.size
+#while  fileNames.size > 0
+#  r = rand(0..fileNames.size) # pick a random file from what remains
+#  newArray[i] = fileNames[r]  # add the random file to the new array
+#  fileNames.delete_at(r)      # remove the selected file
+#  i = i + 1
+#  if i > MAX_FILES            # don't build too big a page
+#    break
+#  end
+#end
+#
+#newArray.each {|x| print x, "\n" }
 #
 ##
 ## Write the file names to a file and print the results
 ##
-open(results,'w') { |f| newArray.each {|x| f << "'<img src = " + '"' + x.to_s + '"' + ">'" + "\n" }}
+#open(results,'w') { |f| newArray.each {|x| f << "'<img src = " + '"' + x.to_s + '"' + ">'" + "\n" }}
 
 #---------------------------------------------------
 # To run this program

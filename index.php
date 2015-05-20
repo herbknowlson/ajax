@@ -53,7 +53,7 @@ function ChangeIt()
 
     $msg = "Got here 2 " . $_GET["index2"];
     error_log(date('Y-m-d H:i:s') . " " . $msg .  "\n", 3, "C:/xampp/php/logs/execution.log");
-    exec("C:/xampp/htdocs/Ajax/batch.bat " . $_GET["index1"] . " " . $_GET["index2"]);
+    exec("C:/xampp/htdocs/Ajax/batchImageV02.bat " . $_GET["index1"] . " " . $_GET["index2"]);
     header("Location: Ajax.htm?selection=1");
    }
 

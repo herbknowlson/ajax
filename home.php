@@ -42,7 +42,7 @@ function ChangeIt()
   function doSelect()
   {
     error_log(date('Y-m-d H:i:s') . " " . $msg .  "\n", 3, "C:/xampp/php/logs/execution.log");
-    exec("C:/xampp/htdocs/Ajax/batchIndex.bat " . $_GET["index1"] . " " . $_GET["index2"]);
+    exec("C:/xampp/htdocs/Ajax/batchIndexV01.bat " . $_GET["index1"] . " " . $_GET["index2"]);
     header("Location: index.php?selection=1");
   }
 
@@ -60,6 +60,7 @@ function ChangeIt()
 
 
 <p><a href='https://www.tumblr.com/login'>tumblr login</a></p>
+<p><a href='http://www.pornhub.com/'>pornhub login</a></p>
 <p><a href='home.php?select=true'>index</a></p>
 
 
