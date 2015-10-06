@@ -38,7 +38,7 @@ SERVER_URL = "https://www.quandl.com/api/v1/datasets/WIKI/AAPL.json?&trim_start=
     response = RestClient.get("#{SERVER_URL}"){|response, request, result|
       Common.debug(request, response, DEBUG)
       response = JSON.parse(response)
-      #puts response
+      puts response
   ##    response["responseCode"].should eql 0
   ##    response["model"]["patients"].count.should > 1
    }

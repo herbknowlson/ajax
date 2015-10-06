@@ -1,8 +1,8 @@
 require 'rspec/core/rake_task'
 
-desc "run rake test"
-RSpec::Core::RakeTask.new(:test) do |t|
-  t.pattern = 'testRakeV01.rb'
+desc "run rake testRspec"
+RSpec::Core::RakeTask.new(:testRspec) do |t|
+  t.pattern = 'testRakeRspecV01.rb'
   #t.pattern = './spec/pm8_spec.rb:177'
   #t.rspec_opts = '--color '
   #t.rspec_opts << '--format nested '

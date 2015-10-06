@@ -20,8 +20,6 @@ include Common
 if ENV["DEBUG"] == true
   DEBUG = true
 else
-  
-  
   DEBUG = ENV["DEBUG"]
 end
 
@@ -29,7 +27,7 @@ end
 
 #describe "rpec example" do
 #  it 'step-01 should test rake' do
-    puts "testRake"
+    puts "This is the output from Ruby program testRakeV01.rb"
   #end
 
 #https://www.quandl.com/api/v1/datasets/WIKI/AAPL.json?auth_token=yDTLcpj-V897yAzGks-J

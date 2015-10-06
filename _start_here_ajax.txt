@@ -1,6 +1,6 @@
 #------------------------------------------------------------------------
 #
-# Use this file (_start_here.txt) to understand how the Ajax project works
+# Use this file (_start_here_ajax.txt) to understand how the Ajax project works
 #
 #--------------------------------------------------------------------------
 # Locations: 
