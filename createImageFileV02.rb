@@ -12,7 +12,7 @@ index2 = ARGV[1]  # another index
 puts index1
 puts index2
 
-MAX_FILES = 100
+MAX_FILES = 200
 results = "imageNames.txt"
 
 puts results

@@ -8,10 +8,7 @@
 #
 MAX_FILES = 100
 results = "indexNames.json"
-results2 = "indexNames.txt"
-#puts results
-
-#myfolder = "C:/xampp/htdocs/Ajax/drop images here/Index/"
+results2 = "indexNames2.txt"
 myfolder = "C:/xampp/htdocs/img/movies/"
 
 keys = []
@@ -46,8 +43,9 @@ File.open(results2,"w") do |f|
   f.puts tr
   for i in 0 ... keys.size
     tdCount = tdCount + 1
-    td = "<td><a href='index.php?select=true&index1=" + keys[i] + "*'>" + values[i] + "</a>"
-    td2 = " -  <a href='index.php?select=true&index1=" + keys[i] + "*&index2=gifs'>gifs</a>  </td>"
+    td = "<td><a href='index2.php?select=true&index1=" + keys[i] + "*'>" + values[i] + "</a>"
+    #td2 = " -  <a href='index2.php?select=true&index1=" + keys[i] + "*&index2=gifs'>gifs</a>  </td>"
+    td2 = ""
     f.puts td + td2
     if tdCount > 2
       trCount = trCount + 1
@@ -62,59 +60,3 @@ File.open(results2,"w") do |f|
     end
   end #outer loop
 end # close the file
-
-#<td><a href='index.php?select=true&index1=0_F*'>Favorites</a></td>
-#open(results2,'w') { |f| newArray.each {|x| f << "'<img src = " + '"' + x.to_s + '"' + ">'" + "\n" }}
-
-
-
-#<td><a href='index.php?select=true&index1=0_F*'>Favorites</a></td>
-
- #open(results,'w') { |f| Dir.entries(myfolder).each {|x| f << x.to_s + "\n" }}
-
-
-#if v=index2.nil?
-#  imageSource1 = './drop images here/Index/' + index1 + '/*.{jpg,png,gif}'
-#  #imageSource1 = './drop images here/Index/' + index1 + '/*.{gif}'
-#  fileNames = Dir[imageSource1].entries
-#else
-#  #imageSource1 = './drop images here/Index/' + index1 + '/*.{jpg,png,gif}'
-#  #imageSource2 = './drop images here/Index/' + index2 + '/*.{jpg,png,gif}'
-#  imageSource1 = './drop images here/Index/' + index1 + '/*.{gif}'
-#  imageSource2 = './drop images here/Index/' + index2 + '/*.{gif}'
-#  fileNames = Dir[imageSource1].entries
-#  fileNames2 = Dir[imageSource2].entries
-#  fileNames.concat fileNames2  # Concatinate the files
-#end  
-#
-##
-## Randomize the file
-##
-#newArray = []
-#i = 0
-#fileSize = fileNames.size
-#while  fileNames.size > 0
-#  r = rand(0..fileNames.size) # pick a random file from what remains
-#  newArray[i] = fileNames[r]  # add the random file to the new array
-#  fileNames.delete_at(r)      # remove the selected file
-#  i = i + 1
-#  if i > MAX_FILES            # don't build too big a page
-#    break
-#  end
-#end
-#
-#newArray.each {|x| print x, "\n" }
-#
-##
-## Write the file names to a file and print the results
-##
-#open(results,'w') { |f| newArray.each {|x| f << "'<img src = " + '"' + x.to_s + '"' + ">'" + "\n" }}
-
-#---------------------------------------------------
-# To run this program
-#
-# 1 - Start Command Prompt with Ruby  C:\Windows\System32\cmd.exe /E:ON /K C:\Ruby21\bin\setrbvars.bat
-# 2 - cd development
-# 3 - cd rubyprograms
-# 4 - ruby createImageFile.rb  
-#----------------------------------------------------

@@ -36,6 +36,7 @@ else
   fileNames.concat fileNames2  # Concatinate the files
 end  
 
+puts fileNames
 #
 # Randomize the file
 #
@@ -43,7 +44,7 @@ newArray = []
 i = 0
 fileSize = fileNames.size
 while  fileNames.size > 0
-  r = rand(0..fileNames.size) # pick a random file from what remains
+  r = rand(0..fileNames.size-1) # pick a random file from what remains
   newArray[i] = fileNames[r]  # add the random file to the new array
   fileNames.delete_at(r)      # remove the selected file
   i = i + 1
@@ -53,13 +54,15 @@ while  fileNames.size > 0
 end
 
 puts "Got here"
-newArray.each {|x| print File.basename(x).to_s , "\n" }
+#newArray.each {|x| print File.basename(x).to_s , "\n" }
+newArray.each {|x| print x.to_s , "\n" }
 
-#open(results,'w') { |f| newArray.each {|x| f << '<video src="../../img/' + '733061a.webm' + '"' + ' controls>' + '</video>' + "\n" }}
-open(results,'w') { |f| newArray.each {|x| f << '<video src="../../img/' + File.basename(x).to_s + '"' + ' controls>' + '</video>' + "\n" }}
-#s = '<video src="C:/xampp/htdocs/img/Index/' +  x.to_s + '"' + ' controls>' + '</video>'
+#open(results,'w') { |f| fileNames.each {|x| f << '<video width="420" height="340" autoplay loop src="../../img/' + File.basename(x).to_s + '"' + ' controls>' + '</video>' + "\n" }}
+#open(results,'w') { |f| fileNames.each {|x| f << '<video width="620" height="540" autoplay loop muted src="../../img/movies/' + x[27..38] + '/' + File.basename(x).to_s + '"' + ' controls>' + '</video>' + "\n" }}
+#open(results,'w') { |f| newArray.each {|x| f << '<video width="620" height="540" autoplay loop muted src="../../img/movies/' + x[27..-1]  + '"' + ' controls>' + '</video>' + "\n" }}
+open(results,'w') { |f| newArray.each {|x| f << '<video autoplay loop muted src="../../img/movies/' + x[27..-1]  + '"' + ' controls>' + '</video>' + "\n" }}
+#C:\xampp\htdocs\img\movies\000 try it__
 
-#s = '<video width="320" height="240" autoplay>' +   '<source src="290952a.webm" type="video/webm">' + 'Your browser does not support the video tag.' + '</video>'
 #open(results,'w') { |f| newArray.each {|x| f << '<video src="' +  x.to_s + '"' + ' controls>' + '</video>' + "\n" }}
 #
 # Write the file names to a file and print the results

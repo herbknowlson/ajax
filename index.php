@@ -32,7 +32,7 @@ error_log(date('Y-m-d H:i:s') . " " . "Got to INDEX page " .  "\n", 3, "C:/xampp
 
 function ChangeIt()
 {
-  var r = Math.floor(Math.random() * 14) + 1;
+  var r = Math.floor(Math.random() * 40) + 1;
   var i = "../../img/bgimage" + r + ".jpg";
   bg = "url(" + i + ") no-repeat";
   document.getElementById("heading").innerHTML=bg;
