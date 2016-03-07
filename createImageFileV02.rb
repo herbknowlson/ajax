@@ -6,6 +6,15 @@
 # Ajax code.
 #----------------------------------------------------
 #
+
+filename = "E:/xampp/php/logs/execution.log"
+target = open(filename, 'a')
+time1 = Time.new
+line1 = time1.strftime("%Y-%m-%d %H:%M:%S") + " - " + "createImageFileV02.rb"
+target.write(line1)
+target.write("\n")
+target.close
+
 index1 = ARGV[0]  # index
 index2 = ARGV[1]  # another index
 
@@ -18,7 +27,9 @@ results = "imageNames.txt"
 puts results
 type = "jpg,png,gif"
 
-currentDir = "C:/xampp/htdocs/Ajax"
+
+
+currentDir = "E:/xampp/htdocs/Ajax"
 Dir.chdir(currentDir)
 if v=index2.nil?
   imageSource1 = './drop images here/Index/' + index1 + '/*.{jpg,png,gif,webm}'

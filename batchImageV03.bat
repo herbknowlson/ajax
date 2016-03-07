@@ -1,5 +1,5 @@
 ECHO %1 %2
-call C:\Ruby21\bin\setrbvars.bat
+call C:\Ruby22-x64\bin\setrbvars.bat
 ruby createImageFileV03.rb %1 %2
-cd C:\xampp\htdocs\Ajax
+cd E:\xampp\htdocs\Ajax
 PAUSE

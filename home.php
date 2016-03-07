@@ -24,14 +24,17 @@ background-color:white;
 
 
 <script>
-console.log("Got here - home - start");
+console.log(" - home.php - start");
 <?php
-error_log(date('Y-m-d H:i:s') . " " . "Got to HOME page " .  "\n", 3, "C:/xampp/php/logs/execution.log");
+date_default_timezone_set('America/Chicago');
+error_log(date('Y-m-d H:i:s') . " " . "- home.php - start" .  "\n", 3, "E:/xampp/php/logs/execution.log");
+
 ?>
 
 function changeIt()
 {
-  console.log("Got here - home - changeIt()");
+  $msg = "- home.php - changeIt()";
+  console.log($msg);
   var i = "../../img/HPIM0407a.jpg";
   bg = "url(" + i + ") no-repeat";
   document.getElementById("heading").innerHTML=bg;
@@ -43,21 +46,21 @@ function changeIt()
 
   function doSelect()
   {
-    $msg = "Got here - home - doSelect()";
-    error_log(date('Y-m-d H:i:s') . " " . $msg .  "\n", 3, "C:/xampp/php/logs/execution.log");
+    error_log(date('Y-m-d H:i:s') . " " . "- home.php - doSelect()" .  "\n", 3, "E:/xampp/php/logs/execution.log");
     if ($_GET["index"] == "3") {
-        console.log("Got here - home - doSelect() index = 3");
-    	exec("C:/xampp/htdocs/Ajax/batchIndexV03.bat " . $_GET["index1"] . " " . $_GET["index2"]);
+        date_default_timezone_set('America/Chicago');
+        console.log(" - home.php - doSelect() index = 3");
+    	exec("E:/xampp/htdocs/Ajax/batchIndexV03.bat " . $_GET["index1"] . " " . $_GET["index2"]);
     	header("Location: index2.php?selection=1");
     } else {
-    	exec("C:/xampp/htdocs/Ajax/batchIndexV01.bat " . $_GET["index1"] . " " . $_GET["index2"]);
+    	exec("E:/xampp/htdocs/Ajax/batchIndexV01.bat " . $_GET["index1"] . " " . $_GET["index2"]);
     	header("Location: index.php?selection=1");
     }
   }
 
   if (isset($_GET['select'])) {
-    $msg = "Got here - home - select = true";
-    error_log(date('Y-m-d H:i:s') . " " . $msg .  "\n", 3, "C:/xampp/php/logs/execution.log");
+    date_default_timezone_set('America/Chicago');
+    error_log(date('Y-m-d H:i:s') . " - home.php - select = true" .  "\n", 3, "E:/xampp/php/logs/execution.log");
     doSelect();
    }
 ?>
@@ -71,7 +74,8 @@ function changeIt()
 
 <h2> Source of Content</h2>
 <p><a href='https://www.tumblr.com/login'>tumblr login</a></p>
-<p><a href='http://www.pornhub.com/gifs/'>pornhub gifs</a></p
+<p><a href='http://www.pornhub.com/gifs/'>pornhub gifs</a></p>
+<p><a href='http://www.porn.com/'>porn.com</a></p>
 <p><a href='https://8ch.net/wx/catalog.html'>8ch webm2 heb</a></p>
 <p><a href='https://8ch.net/trap/res/997.html'>8ch traps</a></p>
 <p><a href='https://8ch.net/wx/res/2728.html'>8ch Shemale</a></p>
@@ -82,9 +86,6 @@ function changeIt()
 <p><a href='home.php?select=true&index=3'>Webm Movies</a></p>
 <h2> My Stories</h2>
 <p><a href='./stories/stories.htm'>Masterbation Session</a></p>
-
-
-
 
 </body>
 </html>

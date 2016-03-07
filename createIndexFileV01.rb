@@ -13,7 +13,15 @@ results = "indexNames.json"
 results2 = "indexNames.txt"
 #puts results
 
-myfolder = "C:/xampp/htdocs/Ajax/drop images here/Index/"
+filename = "E:/xampp/php/logs/execution.log"
+target = open(filename, 'a')
+time1 = Time.new
+line1 = time1.strftime("%Y-%m-%d %H:%M:%S") + " - " + "createFileV01.rb"
+target.write(line1)
+target.write("\n")
+target.close
+
+myfolder = "E:/xampp/htdocs/Ajax/drop images here/Index/"
 
 keys = []
 values = []

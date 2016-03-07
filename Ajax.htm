@@ -50,7 +50,7 @@ function loadXMLDoc()
    	 if (selection == "2") {
 	   var xmlhttp;
 	   xmlhttp=new XMLHttpRequest();
-	   xmlhttp.open("GET","imageNames2.txt",false);
+	   xmlhttp.open("GET","imageNames.txt",false);
 	   xmlhttp.send();
 	   document.getElementById("myImages").innerHTML=xmlhttp.responseText;
    	 }

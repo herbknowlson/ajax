@@ -9,7 +9,7 @@
 MAX_FILES = 100
 results = "indexNames.json"
 results2 = "indexNames2.txt"
-myfolder = "C:/xampp/htdocs/img/movies/"
+myfolder = "E:/xampp/htdocs/img/movies/"
 
 keys = []
 values = []

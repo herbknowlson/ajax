@@ -6,6 +6,14 @@
 # Ajax code.
 #----------------------------------------------------
 #
+
+filename = "E:/xampp/php/logs/execution.log"
+target = open(filename, 'a')
+time1 = Time.new
+line1 = time1.strftime("%Y-%m-%d %H:%M:%S") + " - " + "createImageFileV03.rb"
+target.write(line1)
+target.write("\n")
+target.close
 index1 = ARGV[0]  # index
 index2 = ARGV[1]  # another index
 
@@ -18,17 +26,17 @@ results = "imageNames.txt"
 puts results
 type = "jpg,png,gif"
 
-currentDir = "C:/xampp/htdocs/Ajax"
+currentDir = "E:/xampp/htdocs/Ajax"
 Dir.chdir(currentDir)
 if v=index2.nil?
-  imageSource1 = 'C:/xampp/htdocs/img/movies/' + index1 + '/*.{jpg,png,gif,webm}'
+  imageSource1 = 'E:/xampp/htdocs/img/movies/' + index1 + '/*.{jpg,png,gif,webm}'
   #imageSource1 = './drop images here/Index/' + index1 + '/*.{jpg,png,gif,webm}'
   #imageSource1 = './drop images here/Index/' + index1 + '/*.{gif}'
   fileNames = Dir[imageSource1].entries
 else
   #imageSource1 = './drop images here/Index/' + index1 + '/*.{jpg,png,gif}'
   #imageSource2 = './drop images here/Index/' + index2 + '/*.{jpg,png,gif}'
-  imageSource1 = 'C:/xampp/htdocs/img/Index/' + index1 + '/*.{gif}'
+  imageSource1 = 'E:/xampp/htdocs/img/Index/' + index1 + '/*.{gif}'
   #imageSource1 = './drop images here/Index/' + index1 + '/*.{gif}'
   imageSource2 = './drop images here/Index/' + index2 + '/*.{gif}'
   fileNames = Dir[imageSource1].entries
